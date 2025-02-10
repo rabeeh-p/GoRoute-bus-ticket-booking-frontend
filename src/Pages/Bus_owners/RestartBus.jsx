@@ -57,7 +57,8 @@ const RestartBus = () => {
     }
   
     try {
-      const response = await axios.post(`http://127.0.0.1:8000/reschedule-bus/${busId}/`, {
+      // const response = await axios.post(`http://127.0.0.1:8000/reschedule-bus/${busId}/`, {
+      const response = await axios.post(`https://api.goroute.site/reschedule-bus/${busId}/`, {
         conductor_id: selectedConductor,
         scheduled_date: newScheduleDate
       },

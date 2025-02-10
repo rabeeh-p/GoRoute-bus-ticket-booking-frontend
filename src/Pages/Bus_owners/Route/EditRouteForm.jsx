@@ -29,7 +29,8 @@ const EditRouteForm = () => {
 
             try {
                 const response = await axios.get(
-                    `http://localhost:8000/routes/${routeId}/`,
+                    // `http://localhost:8000/routes/${routeId}/`,
+                    `https://api.goroute.site/routes/${routeId}/`,
                     {
                         headers: {
                             Authorization: `Bearer ${accessToken}`,
@@ -147,7 +148,8 @@ const EditRouteForm = () => {
 
         try {
             await axios.put(
-                `http://localhost:8000/routes/${routeId}/`,
+                // `http://localhost:8000/routes/${routeId}/`,
+                `https://api.goroute.site/routes/${routeId}/`,
                 updatedRoute,
                 {
                     headers: {

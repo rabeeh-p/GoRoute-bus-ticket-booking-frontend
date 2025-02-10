@@ -138,7 +138,8 @@ const BusOwnerSignup = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://127.0.0.1:8000/bus_owner/register/",
+        // "http://127.0.0.1:8000/bus_owner/register/",
+        "https://api.goroute.site/bus_owner/register/",
         formDataWithLogo,
         {
           headers: {

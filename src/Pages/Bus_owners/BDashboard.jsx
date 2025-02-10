@@ -40,7 +40,8 @@ const BDashboard = () => {
       return;
     }
     axiosInstance
-      .get('http://127.0.0.1:8000/api/orders/', {
+      // .get('http://127.0.0.1:8000/api/orders/', {
+      .get('https://api.goroute.site/api/orders/', {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           'Content-Type': 'multipart/form-data',

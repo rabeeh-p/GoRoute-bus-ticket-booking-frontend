@@ -40,7 +40,8 @@ const AddRouteForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/bus-owner/routes/",
+        // "http://localhost:8000/bus-owner/routes/",
+        "https://api.goroute.site/bus-owner/routes/",
         newRoute,
         {
           headers: {
