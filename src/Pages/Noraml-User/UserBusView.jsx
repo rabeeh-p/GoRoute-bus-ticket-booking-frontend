@@ -40,7 +40,8 @@ const UserBusView = () => {
 
 
         axios
-            .get(`http://127.0.0.1:8000/bus-details/${busId}/`, {
+            // .get(`http://127.0.0.1:8000/bus-details/${busId}/`, {
+            .get(`https://api.goroute.site/bus-details/${busId}/`, {
                 params: {
                     from_city: from,
                     to_city: to,
@@ -133,7 +134,8 @@ const UserBusView = () => {
             cancelButtonText: 'No, Simulate Failure'
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.post('http://127.0.0.1:8000/seat-booking/', formData, {
+                // axios.post('http://127.0.0.1:8000/seat-booking/', formData, {
+                axios.post('https://api.goroute.site/seat-booking/', formData, {
                     headers: { Authorization: `Bearer ${accessToken}` },
                 })
                     .then((response) => {
@@ -166,7 +168,8 @@ const UserBusView = () => {
                                         return;
                                     }
 
-                                    axios.post('http://127.0.0.1:8000/payment-success/', {
+                                    // axios.post('http://127.0.0.1:8000/payment-success/', {
+                                    axios.post('https://api.goroute.site/payment-success/', {
                                         payment_id: paymentId,
                                         order_id: orderId,
                                         signature: signature
