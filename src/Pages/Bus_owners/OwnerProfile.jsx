@@ -71,7 +71,7 @@ const OwnerProfile = () => {
             <div className="flex items-center space-x-6">
                 <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-red-600">
                     {owner?.logo_image ? (
-                        <a href={`http://127.0.0.1:8000${owner.logo_image}`} target="_blank" rel="noopener noreferrer">
+                        <a href={`https://api.goroute.site/${owner.logo_image}`} target="_blank" rel="noopener noreferrer">
                             <img
                                 src={`http://127.0.0.1:8000${owner.logo_image}`}
                                 alt="Logo"
