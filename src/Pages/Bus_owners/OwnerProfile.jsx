@@ -71,9 +71,9 @@ const OwnerProfile = () => {
             <div className="flex items-center space-x-6">
                 <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-red-600">
                     {owner?.logo_image ? (
-                        <a href={`https://api.goroute.site/${owner.logo_image}`} target="_blank" rel="noopener noreferrer">
+                        <a href={`https://api.goroute.site${owner.logo_image}`} target="_blank" rel="noopener noreferrer">
                             <img
-                                src={`https://api.goroute.site/${owner.logo_image}`}
+                                src={`https://api.goroute.site${owner.logo_image}`}
                                 alt="Logo"
                                 className="w-full h-full object-cover"
                             />
@@ -104,7 +104,7 @@ const OwnerProfile = () => {
             {owner?.document && (
         <div className="mt-4">
             <a
-                href={`http://127.0.0.1:8000${owner.document}`}
+                href={`https://api.goroute.site/${owner.document}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none">
