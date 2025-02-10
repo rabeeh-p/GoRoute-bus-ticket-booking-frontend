@@ -27,7 +27,8 @@ const UserLogin = () => {
             setError('Please fill in all fields');
         } else {
             axios
-                .post('http://127.0.0.1:8000/login/', { username, password })
+                // .post('http://127.0.0.1:8000/login/', { username, password })
+                .post('https://api.goroute.site/login/', { username, password })
                 .then((response) => {
                     const { access, userType } = response.data;
 
@@ -74,7 +75,8 @@ const UserLogin = () => {
         console.log(idToken);
 
         try {
-            const res = await axios.post("http://127.0.0.1:8000/google-login/", { token: idToken });
+            // const res = await axios.post("http://127.0.0.1:8000/google-login/", { token: idToken });
+            const res = await axios.post("https://api.goroute.site/google-login/", { token: idToken });
             if (res.status === 200) {
                 console.log("Google login successful:", res.data);
 
