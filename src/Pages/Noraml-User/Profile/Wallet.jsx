@@ -10,7 +10,8 @@ const Wallet = () => {
   useEffect(() => {
     const fetchWalletData = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/wallet/', {
+        // const response = await axios.get('http://127.0.0.1:8000/api/wallet/', {
+        const response = await axios.get('https://api.goroute.site/api/wallet/', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('accessToken')}`,  
           },

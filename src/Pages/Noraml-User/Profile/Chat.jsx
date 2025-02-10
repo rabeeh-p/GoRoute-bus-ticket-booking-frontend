@@ -28,7 +28,8 @@ function ChatApp() {
       return;
     }
     axios
-      .get('http://127.0.0.1:8000/api/conductor-messages/', {
+      // .get('http://127.0.0.1:8000/api/conductor-messages/', {
+      .get('https://api.goroute.site/api/conductor-messages/', {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           'Content-Type': 'multipart/form-data',
