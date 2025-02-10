@@ -13,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     // axios.get("http://127.0.0.1:8000/scheduled_buses/")
-    axios.get("http://127.0.0.1:8000/scheduled_buses/")
+    axios.get("https://api.goroute.site/scheduled_buses/")
       .then((response) => {
         const fetchedRoutes = response.data;
 
