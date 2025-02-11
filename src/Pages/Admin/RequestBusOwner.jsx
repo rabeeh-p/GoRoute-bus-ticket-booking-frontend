@@ -107,7 +107,7 @@ const RequestBusOwner = () => {
               <tr key={owner.id}>
                 <td className="px-4 py-2 border">
                   <img
-                    src={owner.logo_image ? `http://127.0.0.1:8000${owner.logo_image}` : '/default-logo.jpg'}
+                    src={owner.logo_image ? `https://api.goroute.site${owner.logo_image}` : '/default-logo.jpg'}
                     alt="Logo"
                     className="w-16 h-16 object-cover rounded-full"
                   />
