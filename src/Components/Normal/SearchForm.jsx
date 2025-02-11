@@ -44,7 +44,7 @@ const SearchForm = () => {
 
     if (fromCity && toCity && date) {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/search_buses/', {
+        const response = await axios.get('https://api.goroute.site/search_buses/', {
           params: { from: fromCity, to: toCity, date },
         });
 
