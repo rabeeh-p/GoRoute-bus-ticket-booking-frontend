@@ -69,7 +69,7 @@ const BusOwnersList = () => {
               <tr key={owner.id} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
                 <td className="px-4 py-4 whitespace-nowrap">
                   <img
-                    src={`http://127.0.0.1:8000${owner.logo_image || "/default-logo.jpg"}`}
+                    src={`https://api.goroute.site${owner.logo_image || "/default-logo.jpg"}`}
                     alt={owner.travel_name}
                     className="w-10 h-10 rounded-full object-cover"
                   />
