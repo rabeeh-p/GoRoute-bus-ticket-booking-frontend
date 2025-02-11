@@ -9,7 +9,10 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
 
-const CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+// const CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+// const CLIENT_ID = 95471622345-6mrooku1asdkjvraoqdr18k4jfo5gakf.apps.googleusercontent.com
+const CLIENT_ID = "95471622345-6mrooku1asdkjvraoqdr18k4jfo5gakf.apps.googleusercontent.com";
+
 
 console.log(CLIENT_ID,'iddd');
 
