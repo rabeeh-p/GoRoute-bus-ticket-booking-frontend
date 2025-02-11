@@ -202,7 +202,7 @@ const TripBooking = () => {
                                             <div className="flex-1 flex items-center gap-3">
                                                 {bus.bus_owner_logo ? (
                                                     <img
-                                                        src={`https://api.goroute.site/${bus.bus_owner_logo}`}
+                                                        src={`https://api.goroute.site${bus.bus_owner_logo}`}
                                                         alt={`${bus.bus_owner_name} logo`}
                                                         className="w-12 h-12 rounded-full object-cover"
                                                     />
