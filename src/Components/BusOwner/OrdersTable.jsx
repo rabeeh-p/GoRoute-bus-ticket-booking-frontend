@@ -15,7 +15,8 @@ const OrdersTable = ({ orders }) => {
     setModalOpen(true);
 
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/orders/${order.id}/details/`);
+      // const response = await axios.get(`http://127.0.0.1:8000/api/orders/${order.id}/details/`);
+      const response = await axios.get(`https://api.goroute.site/api/orders/${order.id}/details/`);
       console.log(response.data, 'ticket');
       
       setSelectedOrder(prevState => ({
@@ -44,7 +45,8 @@ const OrdersTable = ({ orders }) => {
           alert('No access token found');
           return;
         }
-        await axiosInstance.post(`http://127.0.0.1:8000/api/tickets/${ticketToCancel}/cancel/`, { 
+        // await axiosInstance.post(`http://127.0.0.1:8000/api/tickets/${ticketToCancel}/cancel/`, { 
+        await axiosInstance.post(`https://api.goroute.site/api/tickets/${ticketToCancel}/cancel/`, { 
           headers: { 
             Authorization: `Bearer ${accessToken}`,
             'Content-Type': 'multipart/form-data' 
