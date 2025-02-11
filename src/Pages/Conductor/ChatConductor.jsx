@@ -60,7 +60,9 @@ const ChatConductor = () => {
 
   useEffect(() => {
     if (!roomId) return;
-    const ws = new WebSocket(`ws://127.0.0.1:8000/ws/${roomId}/`);
+    // const ws = new WebSocket(`ws://127.0.0.1:8000/ws/${roomId}/`);
+    const ws = new WebSocket(`wss://api.goroute.site/ws/${roomId}/`);
+
     ws.onopen = () => console.log('WebSocket connected');
     ws.onmessage = (event) => {
       const data = JSON.parse(event.data);

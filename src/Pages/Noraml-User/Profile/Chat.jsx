@@ -96,7 +96,9 @@ function ChatApp() {
 
   useEffect(() => {
     if (roomId) {
-      const socketConnection = new WebSocket(`ws://127.0.0.1:8000/ws/${roomId}/`);
+      // const socketConnection = new WebSocket(`ws://127.0.0.1:8000/ws/${roomId}/`);
+      const socketConnection = new WebSocket(`wss://api.goroute.site/ws/${roomId}/`);
+
 
       socketConnection.onopen = () => {
         console.log('WebSocket connection established');
