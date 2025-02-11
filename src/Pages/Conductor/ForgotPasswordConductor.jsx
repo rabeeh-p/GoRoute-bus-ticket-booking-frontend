@@ -24,7 +24,8 @@ const ForgotPasswordConductor = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/forgot-password-check/', { username });
+      // const response = await axios.post('http://127.0.0.1:8000/api/forgot-password-check/', { username });
+      const response = await axios.post('https://api.goroute.site/api/forgot-password-check/', { username });
 
       if (response.status === 200) {
         setStep(2);   
@@ -57,7 +58,8 @@ const ForgotPasswordConductor = () => {
   
     setLoading(true);
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/forgot-password-update/', {
+      // const response = await axios.post('http://127.0.0.1:8000/api/forgot-password-update/', {
+      const response = await axios.post('https://api.goroute.site/api/forgot-password-update/', {
         username,
         new_password: newPassword,
         confirm_password: confirmPassword,   

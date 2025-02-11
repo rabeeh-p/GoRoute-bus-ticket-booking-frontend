@@ -23,7 +23,8 @@ const ChatConductor = () => {
         return;
       }
       try {
-        const response = await axios.get('http://localhost:8000/api/chat/people/', {
+        // const response = await axios.get('http://localhost:8000/api/chat/people/', {
+        const response = await axios.get('https://api.goroute.site/api/chat/people/', {
           headers: { Authorization: `Bearer ${accessToken}` }
         });
         setCurrentUserId(response.data.currentUser.id);
@@ -41,7 +42,8 @@ const ChatConductor = () => {
       try {
         const accessToken = localStorage.getItem('accessToken');
         if (!accessToken) return;
-        const response = await axios.get(`http://localhost:8000/api/chatroom/${selectedPerson.id}/messages/`, {
+        // const response = await axios.get(`http://localhost:8000/api/chatroom/${selectedPerson.id}/messages/`, {
+        const response = await axios.get(`https://api.goroute.site/api/chatroom/${selectedPerson.id}/messages/`, {
           headers: { Authorization: `Bearer ${accessToken}` }
         });
         setRoomId(response.data.chat_room.room_id);

@@ -87,7 +87,8 @@ const ConductorLandingPage = () => {
         setError('No access token found');
         return;
       }
-      const response = await axios.post('http://127.0.0.1:8000/api/start-journey', {
+      // const response = await axios.post('http://127.0.0.1:8000/api/start-journey', {
+      const response = await axios.post('https://api.goroute.site/api/start-journey', {
         busId: busData?.bus?.id
       }, {
         headers: {
@@ -245,7 +246,7 @@ const ConductorLandingPage = () => {
           const accessToken = localStorage.getItem('accessToken');
           if (!accessToken) {
             Swal.fire('Error', 'No access token found', 'error');
-            loadingSwal.close(); // Close the loading spinner
+            loadingSwal.close(); 
             return;
           }
   
