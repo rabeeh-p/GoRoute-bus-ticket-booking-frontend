@@ -443,7 +443,7 @@ const UserBusView = () => {
                     <div className="w-full lg:w-1/2 mb-4 lg:mb-0">
                         <h2 className="text-3xl font-semibold text-gray-800 mb-4 flex items-center">
                             <img
-                                src={`http://127.0.0.1:8000/${logo}`}
+                                src={`https://api.goroute.site/${logo}`}
                                 alt="Bus Owner Logo"
                                 className="w-12 h-12 rounded-full mr-4"
                             />
