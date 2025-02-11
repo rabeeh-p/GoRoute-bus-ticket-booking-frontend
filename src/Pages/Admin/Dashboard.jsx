@@ -9,7 +9,8 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/scheduled-bus-data/?filter_type=${filterType}`);
+        // const response = await axios.get(`http://127.0.0.1:8000/scheduled-bus-data/?filter_type=${filterType}`);
+        const response = await axios.get(`https://api.goroute.site/scheduled-bus-data/?filter_type=${filterType}`);
         setChartData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
