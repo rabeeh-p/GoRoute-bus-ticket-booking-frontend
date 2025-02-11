@@ -20,7 +20,8 @@ const SearchForm = () => {
   useEffect(() => {
     const fetchStopSuggestions = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/all-stops/');
+        // const response = await axios.get('http://127.0.0.1:8000/all-stops/');
+        const response = await axios.get('https://api.goroute.site/all-stops/');
         setStopSuggestions(response.data.stops || []);
       } catch (error) {
         console.error('Error fetching stop suggestions:', error);
