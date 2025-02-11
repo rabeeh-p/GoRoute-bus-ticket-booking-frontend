@@ -124,7 +124,7 @@ const BusOwnerDetails = () => {
         </div>
         <div className="md:w-1/3 p-4 flex justify-center">
           <img
-            src={busOwner.logo_image ? `http://127.0.0.1:8000${busOwner.logo_image}` : '/default-profile.jpg'}
+            src={busOwner.logo_image ? `https://api.goroute.site${busOwner.logo_image}` : '/default-profile.jpg'}
             alt="Bus Owner Logo"
             className="w-32 h-32 rounded-full border-4 border-red-600 object-cover"
           />

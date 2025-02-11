@@ -35,7 +35,8 @@ const UserCreating = () => {
       console.log('Form submitted successfully:', formData);
 
       axios
-        .post('http://127.0.0.1:8000/admin-create-user/', formData)
+        // .post('http://127.0.0.1:8000/admin-create-user/', formData)
+        .post('https://api.goroute.site/admin-create-user/', formData)
         .then((response) => {
           console.log('User created successfully:', response.data);
 
