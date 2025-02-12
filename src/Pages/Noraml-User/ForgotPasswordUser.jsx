@@ -38,7 +38,8 @@ const ForgotPasswordUser = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://127.0.0.1:8000/forgot-password-check-user/', { username });
+      // const response = await axios.post('http://127.0.0.1:8000/forgot-password-check-user/', { username });
+      const response = await axios.post('https://api.goroute.site/forgot-password-check-user/', { username });
 
       if (response.status === 200) {
         setUserType(response.data.userType);
@@ -81,7 +82,8 @@ const ForgotPasswordUser = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://127.0.0.1:8000/forgot-password-update/user/', {
+      // const response = await axios.post('http://127.0.0.1:8000/forgot-password-update/user/', {
+      const response = await axios.post('https://api.goroute.site/forgot-password-update/user/', {
         username,
         new_password: newPassword,
         user_type: userType,   
