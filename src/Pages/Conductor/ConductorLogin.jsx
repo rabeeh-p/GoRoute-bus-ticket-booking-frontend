@@ -55,7 +55,6 @@ const ConductorLogin = () => {
       } else {
         setError('Something went wrong. Please try again later.');
       }
-      console.error('Login error:', err);
     } finally {
       setLoading(false);
     }

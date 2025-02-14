@@ -17,7 +17,6 @@ const ConductorLandingPage = () => {
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState('');
   const [isJourneyStarted, setIsJourneyStarted] = useState(false);
-  console.log(isJourneyStarted, 'jouir');
   const [message, setMessage] = useState(null);
 
 
@@ -44,7 +43,6 @@ const ConductorLandingPage = () => {
         });
         if (response.data) {
           setBusData(response.data);
-          console.log(response.data, 'bus and stops detgails');
           setMessage(response.data.detail);
 
           setLoading(false);
@@ -103,7 +101,7 @@ const ConductorLandingPage = () => {
         console.error('Failed to start journey');
       }
     } catch (error) {
-      console.error('Error starting journey:', error);
+      console.error('Error starting journey:');
     }
   };
 

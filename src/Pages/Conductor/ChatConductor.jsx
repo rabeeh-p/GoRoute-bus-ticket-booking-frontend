@@ -30,7 +30,7 @@ const ChatConductor = () => {
         setCurrentUserId(response.data.currentUser.id);
         setChatPeople(response.data.chatPeople || []);
       } catch (error) {
-        console.error('Error fetching chat people:', error);
+        console.error('Error fetching chat people:');
       }
     };
     fetchChatPeople();
@@ -52,7 +52,7 @@ const ChatConductor = () => {
         }
         setMessages(response.data.messages);
       } catch (error) {
-        console.error('Error fetching messages:', error);
+        console.error('Error fetching messages:');
       }
     };
     fetchMessages();
@@ -68,7 +68,7 @@ const ChatConductor = () => {
       const data = JSON.parse(event.data);
       setMessages((prevMessages) => [...prevMessages, data]);
     };
-    ws.onerror = (error) => console.error('WebSocket error:', error);
+    ws.onerror = (error) => console.error('WebSocket error:');
     ws.onclose = () => console.log('WebSocket closed');
     setSocket(ws);
     return () => ws.close();

@@ -34,7 +34,6 @@ const ForgotPasswordConductor = () => {
       }
     } catch (err) {
       setError(err.response?.data?.error || 'Something went wrong. Please try again later.');
-      console.error(err);
     } finally {
       setLoading(false);
     }
@@ -79,7 +78,6 @@ const ForgotPasswordConductor = () => {
       } else {
         setError(err.response?.data?.error || 'Something went wrong. Please try again later.');
       }
-      console.error(err);
     } finally {
       setLoading(false);
     }
