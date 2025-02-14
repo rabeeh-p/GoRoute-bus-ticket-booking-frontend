@@ -30,10 +30,8 @@ const BusWallet = () => {
         const fetchedBalance = parseFloat(response.data.balance);
         setBalance(isNaN(fetchedBalance) ? 0 : fetchedBalance);  
         setTransactions(response.data.transactions || []);
-        console.log(response.data, "data wallet");
       } catch (err) {
         setError("Failed to fetch wallet data. Please try again later.");
-        console.log(err, "err");
       }
     };
 

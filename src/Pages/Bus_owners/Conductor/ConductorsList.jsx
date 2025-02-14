@@ -19,7 +19,6 @@ const ConductorsList = () => {
                         Authorization: `Bearer ${accessToken}`,
                     },
                 });
-                console.log(response.data, 'API response data');
                 setConductors(Array.isArray(response.data) ? response.data : []);
                 setLoading(false);
             } catch (error) {

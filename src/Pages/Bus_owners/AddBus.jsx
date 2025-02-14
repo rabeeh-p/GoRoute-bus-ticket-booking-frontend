@@ -38,7 +38,6 @@ const AddBus = () => {
                   } else {
                     setError('Failed to fetch bus types');
                     setError('Failed to fetch bus types');
-                    console.error('Error fetching bus types:', error);
                   }
             });
     }, []);
@@ -94,7 +93,6 @@ const AddBus = () => {
             });
             navigate('/busowner-dashboard/bus-owner/bus-list/');  
         } catch (error) {
-            console.error('There was an error adding the bus!', error);
 
             if (error.response && error.response.data) {
                 if (error.response.data.name && error.response.data.name.length > 0) {

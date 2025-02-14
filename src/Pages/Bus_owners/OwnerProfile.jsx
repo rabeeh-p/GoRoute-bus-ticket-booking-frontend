@@ -11,7 +11,6 @@ const OwnerProfile = () => {
     const [error, setError] = useState(null);
     const { handleLogout } = useLogout();
 
-    console.log(owner, 'owner');
 
 
     useEffect(() => {

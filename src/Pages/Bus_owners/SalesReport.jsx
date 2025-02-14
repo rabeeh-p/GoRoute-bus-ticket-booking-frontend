@@ -23,7 +23,6 @@ const SalesReport = () => {
                 'Content-Type': 'multipart/form-data' 
             }
         });  
-        console.log('API response:', response.data);  
 
         if (Array.isArray(response.data)) {
           setSalesData(response.data);  

@@ -24,12 +24,10 @@ const ScheduledBusList = () => {
     })
     .then(response => {
       const buses = response.data;
-      console.log(response.data,'data');
       setScheduledBuses(response.data); 
       setLoading(false);
     })
     .catch(err => {
-      console.log('err', err);
       if (err.response && err.response.status === 401) {
         handleLogout();   
       } else if (err.response && err.response.data && err.response.data.detail) {

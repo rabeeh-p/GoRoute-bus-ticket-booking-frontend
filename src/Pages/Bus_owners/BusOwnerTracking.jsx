@@ -17,7 +17,6 @@ const BusOwnerTracking = () => {
         // const response = await axios.get(`http://127.0.0.1:8000/owner-bus-tracking/${busId}/`);
         const response = await axios.get(`https://api.goroute.site/owner-bus-tracking/${busId}/`);
         const data = response.data;
-        console.log(response.data,'bus tracing');
         
         setBusData(data);
         setLoading(false);
@@ -31,7 +30,6 @@ const BusOwnerTracking = () => {
           }
         }
       } catch (error) {
-        console.error("Error fetching bus data:", error);
         setLoading(false);
       }
     };

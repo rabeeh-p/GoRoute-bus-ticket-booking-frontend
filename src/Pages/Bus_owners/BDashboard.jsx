@@ -58,7 +58,7 @@ const BDashboard = () => {
         setData(transformedData);
         setFilteredData(filteredData);
       })
-      .catch((error) => console.error('Error fetching order data:', error));
+      .catch((error) => console.error('Error fetching order data:'));
   }, [filter]);  
 
   const handleFilterChange = (newFilter) => {

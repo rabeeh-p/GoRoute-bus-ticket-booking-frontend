@@ -25,7 +25,6 @@ const AddRouteForm = () => {
     };
 
     const accessToken = localStorage.getItem('accessToken');
-    console.log(accessToken,'tocken');
     
 
     if (!accessToken) {
@@ -64,7 +63,6 @@ const AddRouteForm = () => {
       navigate('/busowner-dashboard/bus-owner/route-table')
 
     } catch (err) {
-      console.error('Error:', err);
 
       if (err.response && err.response.status === 401) {
         handleLogout()

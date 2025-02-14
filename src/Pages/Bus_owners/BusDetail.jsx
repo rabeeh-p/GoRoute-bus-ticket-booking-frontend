@@ -10,7 +10,6 @@ const BusDetail = ({ busId }) => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  console.log(busDetail,'details');
   const { handleLogout } = useLogout();
   
 

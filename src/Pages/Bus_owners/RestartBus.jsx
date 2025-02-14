@@ -74,7 +74,6 @@ const RestartBus = () => {
         setNewScheduleDate('');     
       }
     } catch (err) {
-      console.error("Error restarting bus:", err);
       setError("An error occurred while restarting the bus. Please try again.");
     }
   };

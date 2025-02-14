@@ -66,7 +66,6 @@ const BusSchedule = () => {
     .then(response => {
       const inactiveConductors = response.data.filter(conductor => !conductor.is_active);
       setConductors(inactiveConductors);
-      console.log(response.data,'conduc');
       
     })
     .catch(err => {
@@ -111,7 +110,6 @@ const BusSchedule = () => {
       navigate('/busowner-dashboard/scheduled-bus-list');  
     })
     .catch(err => {
-      console.log('Error:', err);
   
       if (err.response && err.response.data && err.response.data.error) {
         const errorMessage = err.response.data.error;

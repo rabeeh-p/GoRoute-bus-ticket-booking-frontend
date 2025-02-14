@@ -27,7 +27,6 @@ const BusList = () => {
     })
     .then(response => {
       const buses = response.data;
-      console.log('buses',buses);
       
       setApprovedBuses(buses.filter(bus => bus.is_active && bus.Scheduled === false )); 
       setPendingBuses(buses.filter(bus => !bus.is_active)); 

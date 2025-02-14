@@ -16,9 +16,7 @@ const ScheduledBusDetails = () => {
   const { handleLogout } = useLogout();
 
 
-  console.log(seatNumbers,'numbers');
-  console.log(orders,'orders');
-  console.log(busDetails,'details');
+
 
   
 
@@ -44,7 +42,6 @@ const ScheduledBusDetails = () => {
             Authorization: `Bearer ${accessToken}`,
           },
         });
-        console.log(seatNumbersResponse.data,'seat numbers');
         
         
         
@@ -60,7 +57,6 @@ const ScheduledBusDetails = () => {
         if (err.response && err.response.status === 401) {
           handleLogout();  
         } else {
-          console.log("Error fetching data:", err);
           setError("Failed to fetch data");
           setLoading(false);
         }

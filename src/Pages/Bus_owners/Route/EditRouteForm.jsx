@@ -11,7 +11,6 @@ const EditRouteForm = () => {
     const [distance_in_km, setDistanceInKm] = useState("");
     const [start_datetime, setStartDatetime] = useState("");
     const navigate = useNavigate();
-    console.log(route_name, 'namee');
 
 
     useEffect(() => {
@@ -37,7 +36,6 @@ const EditRouteForm = () => {
                         },
                     }
                 );
-                console.log(response.data, 'dataaa');
 
                 const { route_name, start_location, end_location, distance_in_km, start_datetime } = response.data;
                 const formatDatetime = (datetime) => {
@@ -51,7 +49,6 @@ const EditRouteForm = () => {
                 setDistanceInKm(Math.floor(distance_in_km));
                 setStartDatetime(formatDatetime(start_datetime));
             } catch (err) {
-                console.error("Error fetching route details:", err);
                 Swal.fire({
                     icon: "error",
                     title: "Error",
@@ -166,7 +163,6 @@ const EditRouteForm = () => {
 
             navigate("/busowner-dashboard/bus-owner/route-table");
         } catch (err) {
-            console.error("Error updating route:", err);
 
             if (err.response && err.response.data) {
                 const errorMessage = Object.values(err.response.data)

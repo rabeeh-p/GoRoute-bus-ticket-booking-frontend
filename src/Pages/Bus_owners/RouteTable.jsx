@@ -8,7 +8,6 @@ const RouteTable = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  console.log('routes', routes);
   const { handleLogout } = useLogout();
 
 
@@ -27,13 +26,11 @@ const RouteTable = () => {
         if (response.status === 200) {
           setRoutes(response.data);
         } else {
-          console.error("Failed to fetch routes:", response.status);
         }
       } catch (error) {
         if (error.response && error.response.status === 401) {
           handleLogout();  
         } else {
-          console.error("Error fetching routes:", error);
         }
       } finally {
         setLoading(false);

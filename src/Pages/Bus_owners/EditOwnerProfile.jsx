@@ -131,7 +131,6 @@ const BusOwnerEdit = () => {
             navigate(`/busowner-dashboard/owner-profile`);
         })
         .catch(err => {
-            console.error(err);
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',

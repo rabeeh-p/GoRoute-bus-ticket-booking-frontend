@@ -14,9 +14,7 @@ const RouteStopsManager = () => {
   const { handleLogout } = useLogout();
 
   const { routeId } = useParams("id");
-  console.log('route',routeId);
 
-  console.log('stops component');
   
   
 
@@ -24,7 +22,6 @@ const RouteStopsManager = () => {
     
     const fetchRouteStops = async () => {
       const accessToken = localStorage.getItem('accessToken');  
-      console.log(accessToken,'access tocken');
       
   
       if (!accessToken) {
@@ -52,7 +49,6 @@ const RouteStopsManager = () => {
           })
 
        
-        console.error("Error fetching stops:", error);
         }
       } finally {
         setLoading(false);
@@ -100,7 +96,6 @@ const RouteStopsManager = () => {
         });
       }
     } catch (error) {
-        console.log(error.response.data,'data kmmmm');
         
       const errorMessage =
         error.response?.data?.detail || "Failed to add the stop. Please try again.";
@@ -109,7 +104,6 @@ const RouteStopsManager = () => {
         title: "Error",
         text: errorMessage,
       });
-      console.error("Error adding stop:", error);
     }
   };
 
