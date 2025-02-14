@@ -49,7 +49,7 @@ const Navbar = () => {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-700 hover:text-red-600">Home</a>
+            <a href="#" onClick={() => navigate('/')} className="text-gray-700 hover:text-red-600">Home</a>
             <a href="#" className="text-gray-700 hover:text-red-600">Book Tickets</a>
             <a href="#" className="text-gray-700 hover:text-red-600">My Bookings</a>
             <a href="#" className="text-gray-700 hover:text-red-600">Contact Us</a>
