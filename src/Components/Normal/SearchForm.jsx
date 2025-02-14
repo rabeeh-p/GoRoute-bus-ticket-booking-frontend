@@ -24,7 +24,7 @@ const SearchForm = () => {
         const response = await axios.get('https://api.goroute.site/all-stops/');
         setStopSuggestions(response.data.stops || []);
       } catch (error) {
-        console.error('Error fetching stop suggestions:', error);
+        // console.error('Error fetching stop suggestions:', error);
       }
     };
 
@@ -66,7 +66,6 @@ const SearchForm = () => {
         }
       } catch (err) {
         setError('Error fetching buses');
-        console.error('Error fetching buses:', err);
       } finally {
         setLoading(false);
       }
