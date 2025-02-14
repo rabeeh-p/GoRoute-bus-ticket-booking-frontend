@@ -16,7 +16,6 @@ const BusTracking = () => {
         // const response = await axios.get(`http://127.0.0.1:8000/bus-tracking/${busId}/`);
         const response = await axios.get(`https://api.goroute.site/bus-tracking/${busId}/`);
         const data = response.data;
-        console.log(response.data,'data');
         
         setBusData(data);
         setLoading(false);
@@ -30,7 +29,6 @@ const BusTracking = () => {
           }
         }
       } catch (error) {
-        console.error("Error fetching bus data:", error);
         setLoading(false);
       }
     };
@@ -152,10 +150,8 @@ const BusTracking = () => {
                 <div className="font-medium text-gray-600">Next Stop</div>
                 <div className="text-lg text-red-600">
                   {next_stops[0]?.stop_name || "End of Route"}
-                  {console.log(currentStopIndex,'indexd')
-                  }
-                  {console.log(next_stops,'next')
-                  }
+                  
+                  
                 </div>
               </div>
               <div className="bg-white p-4 shadow rounded-lg">

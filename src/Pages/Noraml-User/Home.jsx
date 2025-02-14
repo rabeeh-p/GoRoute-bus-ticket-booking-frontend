@@ -34,7 +34,6 @@ const Home = () => {
         setLoading(false);
       })
       .catch((error) => {
-        console.error("There was an error fetching the routes!", error);
         setLoading(false);
       });
   }, []);

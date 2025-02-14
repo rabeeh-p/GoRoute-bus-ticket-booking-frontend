@@ -121,7 +121,6 @@ const SignUp = () => {
         } catch (error) {
              
             Swal.close();   
-            console.error('Error during registration:', error);
             Swal.fire({
                 icon: 'error',
                 title: 'Registration Failed',

@@ -46,7 +46,6 @@ const OTPVerification = () => {
 
       // const response = await axios.post('http://127.0.0.1:8000/otp/', dataToSend);
       const response = await axios.post('https://api.goroute.site/otp/', dataToSend);
-      console.log('Backend Response:', response.data);
       
       if (response.data.message === 'User registered successfully') {
         setIsVerified(true);

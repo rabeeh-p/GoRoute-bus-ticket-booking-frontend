@@ -31,7 +31,6 @@ const ProfileDetails = () => {
           },
         });
 
-        console.log('User profile data:', response.data);
 
         if (response.data.deactivated) {
           handleLogout()
@@ -59,7 +58,6 @@ const ProfileDetails = () => {
             setError('Failed to fetch user profile');
           }
         } else {
-          console.error('Error fetching user profile:', err.message || err);
           setError('Failed to fetch user profile');
         }
       } finally {

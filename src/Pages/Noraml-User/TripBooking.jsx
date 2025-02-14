@@ -13,7 +13,6 @@ const TripBooking = () => {
 
     const navigate = useNavigate('')
 
-    console.log(buses, 'buses');
 
 
     const searchParams = JSON.parse(localStorage.getItem('searchParams') || '{}');
@@ -50,12 +49,10 @@ const TripBooking = () => {
 
     const handleBusTypeChange = (e) => {
         setBusTypeFilter(e.target.value);  
-        console.log("Selected Bus Type:", e.target.value);
     };
 
     const handleSeatTypeChange = (e) => {
         setSeatTypeFilter(e.target.value);  
-        console.log("Selected Seat Type:", e.target.value);
     };
 
     const filteredBuses = Array.isArray(buses.buses)

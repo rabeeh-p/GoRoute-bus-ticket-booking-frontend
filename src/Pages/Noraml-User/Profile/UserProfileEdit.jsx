@@ -31,7 +31,6 @@ const UserProfileEdit = () => {
     })
     .then(response => {
       setUserDetails(response.data);
-      console.log(response.data, 'data edit page');
       
       setLoading(false);
     })

@@ -20,8 +20,7 @@ const UserLogin = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(username, 'user');
-        console.log(password, 'pass');
+        
 
         if (!username || !password) {
             setError('Please fill in all fields');
@@ -32,7 +31,6 @@ const UserLogin = () => {
                 .then((response) => {
                     const { access, userType } = response.data;
 
-                    console.log(response.data, 'dataaaaaaaaa');
 
 
                     if (access) {
@@ -57,7 +55,6 @@ const UserLogin = () => {
                     } else {
                         setError('Something went wrong. Please try again later.');
                     }
-                    console.error(error);
                 });
 
             setError('');
@@ -72,19 +69,16 @@ const UserLogin = () => {
 
     const handleGoogleLogin = async (response) => {
         const idToken = response.credential;
-        console.log(idToken);
 
         try {
             // const res = await axios.post("http://127.0.0.1:8000/google-login/", { token: idToken });
             const res = await axios.post("https://api.goroute.site/google-login/", { token: idToken });
             if (res.status === 200) {
-                console.log("Google login successful:", res.data);
 
                 dispatch(setToken({ token: res.data.tokens.access }));
                 dispatch(setUserType({ userType: 'normal_user' }));
 
-                console.log('acces token', res.data.tokens.access);
-                console.log('type', res.data.user.user_type);
+                
 
 
                 localStorage.setItem("accessToken", res.data.tokens.access);
@@ -93,10 +87,10 @@ const UserLogin = () => {
 
                 navigate('/')
             } else {
-                console.error("Google login failed:", res.data.error);
+                // console.error("Google login failed:", res.data.error);
             }
         } catch (error) {
-            console.error("Error during Google login:", error.response ? error.response.data : error);
+            // console.error("Error during Google login:", error.response ? error.response.data : error);
         }
     };
 

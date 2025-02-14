@@ -11,7 +11,6 @@ const UserTickets = () => {
     const { orderId } = useParams();
     const navigate = useNavigate();
 
-    console.log(orderDetails, 'order details');
 
 
     useEffect(() => {
@@ -31,12 +30,10 @@ const UserTickets = () => {
                 setOrderDetails(response.data.order);
                 setTickets(response.data.tickets);
                 setLoading(false);
-                console.log(response.data, 'order now ');
                 setBustStarted(response.data.order.bus_started)
 
             })
             .catch((error) => {
-                console.error('Error fetching order details:', error);
                 setLoading(false);
             });
     }, [orderId, navigate]);

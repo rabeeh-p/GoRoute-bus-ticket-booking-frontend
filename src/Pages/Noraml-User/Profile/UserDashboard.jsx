@@ -27,7 +27,6 @@ const UserDashboard = () => {
                 });
 
                 const data = response.data;
-                console.log(data, 'dataaaaaa');
 
                 setStats([
                     { icon: FaTicketAlt, title: 'Active Tickets', value: data.stats[0]?.value ?? 0 },

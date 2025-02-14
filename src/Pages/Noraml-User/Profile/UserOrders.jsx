@@ -20,12 +20,10 @@ const UserOrders = () => {
             },
         })
         .then(response => {
-            console.log('Order Data:', response.data);
             setOrders(response.data.orders);   
             setLoading(false);
         })
         .catch(error => {
-            console.error('Error fetching orders:', error);
             setLoading(false);
         });
     }, [navigate]);

@@ -53,7 +53,6 @@ const ForgotPasswordUser = () => {
       } else {
         setError('Something went wrong. Please try again later.');
       }
-      console.error(err);
     } finally {
       setLoading(false);
     }
@@ -103,7 +102,6 @@ const ForgotPasswordUser = () => {
       } else {
         setError('Something went wrong. Please try again later.');
       }
-      console.error(err);
     } finally {
       setLoading(false);
     }

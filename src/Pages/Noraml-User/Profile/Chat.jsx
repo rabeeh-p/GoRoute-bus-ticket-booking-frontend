@@ -15,11 +15,7 @@ function ChatApp() {
   const [userid, setUserId] = useState('');
   const messagesEndRef = useRef(null);
 
-  console.log(messages, 'message');
-  console.log(firstUser, 'first');
-  console.log(secondUser, 'second');
-  console.log(socket, 'socket');
-  console.log(roomId, 'room id');
+ 
 
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken');
@@ -36,13 +32,12 @@ function ChatApp() {
         },
       })
       .then((response) => {
-        console.log(response.data, 'new dataaaaa is first');
         setUserId(response.data.currentUser.id)
 
         setChatPeople(response.data.conductors);
       })
       .catch((error) => {
-        console.error('Error fetching conductors:', error);
+        // console.error('Error fetching conductors:', error);
       });
   }, []);
 
@@ -63,7 +58,6 @@ function ChatApp() {
           },
         })
         .then((response) => {
-          console.log('Fetched messages:', response.data.chat_room.room_id);
           setRoomId(response.data.chat_room.room_id);
 
           setMessages((prevMessages) => ({
@@ -75,19 +69,16 @@ function ChatApp() {
             const user1 = response.data.messages[0].user;
             const uniqueUsers = [...new Set(response.data.messages.map((msg) => msg.user))];
 
-            console.log('Unique Users:', uniqueUsers);
 
             const user2 = uniqueUsers.find((user) => user !== user1) || null;
 
-            console.log(user1, 'first');
-            console.log(user2, 'second');
-
+          
             setFirstUser(user2);
             setSecondUser(user1);
           }
         })
         .catch((error) => {
-          console.error('Error fetching messages:', error);
+          // console.error('Error fetching messages:', error);
         });
     }
   }, [selectedPerson]);
@@ -100,13 +91,12 @@ function ChatApp() {
       const socketConnection = new WebSocket(`wss://api.goroute.site/ws/${roomId}/`);
 
 
-      socketConnection.onopen = () => {
-        console.log('WebSocket connection established');
-      };
+      // socketConnection.onopen = () => {
+      //   console.log('WebSocket connection established');
+      // };
 
       socketConnection.onmessage = function (event) {
         const data = JSON.parse(event.data);
-        console.log('New message:', data);
 
         setMessages((prevMessages) => ({
           ...prevMessages,

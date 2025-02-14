@@ -22,9 +22,7 @@ const UserBusView = () => {
 
 
 
-    console.log(busDetails, 'details');
-    console.log(logo, 'logo');
-
+    
 
 
     const naviagate = useNavigate()
@@ -34,7 +32,6 @@ const UserBusView = () => {
     const { from, to, date } = searchParams;
 
     useEffect(() => {
-        console.log('Bus ID:', busId);
 
 
 
@@ -50,7 +47,6 @@ const UserBusView = () => {
             }
             )
             .then((response) => {
-                console.log(response.data, 'dataaas');
 
                 setBusDetails(response.data.bus);
                 setPrice(response.data.total_price)
@@ -59,7 +55,6 @@ const UserBusView = () => {
                 setLogo(response.data.bus_log)
             })
             .catch((error) => {
-                console.error("Error fetching bus details:", error);
                 setError("Could not fetch bus details.");
             });
     }, [busId]);
@@ -181,7 +176,6 @@ const UserBusView = () => {
                                         })
                                         .catch((err) => {
                                             Swal.close();
-                                            console.error("Payment verification error:", err.response.data);
                                             Swal.fire("Error!", "Payment verification failed.", "error");
                                         });
                                 },
@@ -229,7 +223,6 @@ const UserBusView = () => {
 
     const getSeatStyle = (type, seatNumber) => {
         let baseStyle = "";
-        console.log(type, 'typeeeee');
 
 
         switch (type) {

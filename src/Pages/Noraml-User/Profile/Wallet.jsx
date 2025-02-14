@@ -16,12 +16,10 @@ const Wallet = () => {
             Authorization: `Bearer ${localStorage.getItem('accessToken')}`,  
           },
         });
-        console.log(response.data,'data walllet');
         
         setTotalAmount(response.data.balance);
         setTransactions(response.data.transactions);
       } catch (err) {
-        console.error(err);
         setError('Failed to fetch wallet data.');
       }
     };
