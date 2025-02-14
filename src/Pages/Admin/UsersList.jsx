@@ -24,13 +24,10 @@ const UsersList = () => {
       })
       .then((response) => {
         setUsers(response.data);
-        console.log(response, "data");
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err, "err");
         if (err.response && err.response.status === 401) {
-          console.log(err, "401");
           localStorage.removeItem("accessToken");
           localStorage.removeItem("refreshToken");
           navigate("/admin-login");

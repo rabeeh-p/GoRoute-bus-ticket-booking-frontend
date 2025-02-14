@@ -8,8 +8,6 @@ const BusDetails = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const { busId } = useParams();  
-    console.log(busId,'bus idddd');
-    console.log(busDetails,'bus details');
 
 
     
@@ -25,7 +23,6 @@ const BusDetails = () => {
             setBusDetails(response.data);
         } catch (err) {
             setError('Failed to fetch bus details');
-            console.error(err);
         } finally {
             setLoading(false);
         }

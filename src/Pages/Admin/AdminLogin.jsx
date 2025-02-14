@@ -36,7 +36,6 @@ const AdminLogin = () => {
         window.location.href = "admin-home/dashboard";  
       }
     } catch (err) {
-      console.error(err);
       setError(err.response?.data?.error || "Login failed. Please try again.");
     }
   };

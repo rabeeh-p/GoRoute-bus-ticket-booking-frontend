@@ -30,7 +30,6 @@ const AdminBusRequests = () => {
             setBusRequests(response.data);
         } catch (err) {
             setError('Failed to fetch bus requests');
-            console.error(err);
         } finally {
             setLoading(false);
         }
@@ -66,7 +65,6 @@ const AdminBusRequests = () => {
                 fetchBusRequests();
             } catch (error) {
                 Swal.fire('Error!', 'Failed to approve the request.', 'error');
-                console.error(error);
             }
         }
     };
@@ -99,7 +97,6 @@ const AdminBusRequests = () => {
                 fetchBusRequests();
             } catch (error) {
                 Swal.fire('Error!', 'Failed to reject the request.', 'error');
-                console.error(error);
             }
         }
     };

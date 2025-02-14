@@ -79,7 +79,6 @@ const BusOwnerDetails = () => {
             );
           })
           .catch((err) => {
-            console.error('Error updating approval status:', err);
             Swal.fire('Error', 'Failed to update the status. Please try again.', 'error');
           });
       }

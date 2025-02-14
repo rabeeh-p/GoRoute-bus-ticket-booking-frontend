@@ -9,7 +9,6 @@ const RequestBusOwner = () => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [selectedOwner, setSelectedOwner] = useState(null);
   const navigate = useNavigate();
-  console.log(busOwners,'busowner idddd issue')
 
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken');
@@ -35,7 +34,6 @@ const RequestBusOwner = () => {
   }, [navigate]);
 
   const handleAccept = (ownerId) => {
-    console.log(ownerId,'iddddd');
     
     setSelectedOwner(ownerId);
     setShowConfirmModal(true);

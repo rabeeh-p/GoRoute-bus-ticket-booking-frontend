@@ -13,7 +13,6 @@ const Dashboard = () => {
         const response = await axios.get(`https://api.goroute.site/scheduled-bus-data/?filter_type=${filterType}`);
         setChartData(response.data);
       } catch (error) {
-        console.error('Error fetching data:', error);
       }
     };
 
